@@ -1,6 +1,6 @@
 # Ranjan Vishwakarma - AI & Data Science Portfolio
 
-A modern, animated portfolio website for Ranjan Vishwakarma, showcasing skills, projects, and real-time GitHub data integration.
+A modern, animated portfolio website for Ranjan Vishwakarma, featuring a professional profile picture and showcasing skills, projects, and real-time GitHub data integration.
 
 ## Features
 
