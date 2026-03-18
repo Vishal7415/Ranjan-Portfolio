@@ -739,49 +739,6 @@
             border-radius: 50%;
         }
 
-        .github-config {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .config-card {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid var(--primary);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .config-card h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .config-input {
-            display: flex;
-            gap: 1rem;
-            margin: 1.5rem 0;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .config-input input {
-            flex: 1;
-            min-width: 200px;
-            padding: 0.8rem 1rem;
-            background: rgba(30, 41, 59, 0.8);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 10px;
-            color: var(--light);
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .config-input input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
         .loading-spinner {
             text-align: center;
             padding: 3rem;
@@ -1117,23 +1074,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- GitHub Configuration -->
-        <div class="github-config animate-on-scroll">
-            <div class="config-card">
-                <h4><i class="fas fa-cog"></i> GitHub Configuration</h4>
-                <p>To display your real GitHub data, add your username below:</p>
-                <div class="config-input">
-                    <input type="text" id="githubUsername" placeholder="Enter your GitHub username">
-                    <button class="btn btn-primary" onclick="fetchGitHubData()">
-                        <i class="fas fa-sync"></i> Fetch Data
-                    </button>
-                </div>
-                <p style="font-size: 0.9rem; color: var(--gray); margin-top: 1rem;">
-                    Note: The GitHub API has rate limits. Public data is fetched without authentication.
-                </p>
-            </div>
-        </div>
     </section>
 
     <!-- Contact Section -->
@@ -1322,7 +1262,8 @@
         });
 
         // GitHub API functionality
-        let currentUsername = '';
+        const DEFAULT_USERNAME = 'ranjan-89'; // Default GitHub username
+        let currentUsername = DEFAULT_USERNAME;
 
         // Language colors for GitHub repositories
         const languageColors = {
@@ -1347,14 +1288,7 @@
 
         // Fetch GitHub data
         async function fetchGitHubData() {
-            const username = document.getElementById('githubUsername').value.trim();
-            
-            if (!username) {
-                showError('Please enter a GitHub username');
-                return;
-            }
-
-            currentUsername = username;
+            const username = currentUsername || DEFAULT_USERNAME;
             
             try {
                 // Show loading state
@@ -1378,9 +1312,6 @@
                 
                 // Update repositories
                 displayRepositories(repos);
-                
-                // Save username to localStorage
-                localStorage.setItem('githubUsername', username);
                 
             } catch (error) {
                 showError(`Error: ${error.message}`);
@@ -1481,11 +1412,8 @@
 
         // Load saved username on page load
         window.addEventListener('DOMContentLoaded', () => {
-            const savedUsername = localStorage.getItem('githubUsername');
-            if (savedUsername) {
-                document.getElementById('githubUsername').value = savedUsername;
-                fetchGitHubData();
-            }
+            // Auto-fetch GitHub data with default username
+            fetchGitHubData();
         });
 
         // Auto-refresh data every 5 minutes
