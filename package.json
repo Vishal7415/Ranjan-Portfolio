@@ -1,0 +1,13 @@
+{
+  "name": "ranjan-vishwakarma-portfolio",
+  "version": "1.0.0",
+  "description": "AI & Data Science Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "dev": "python3 -m http.server 8080"
+  },
+  "keywords": ["portfolio", "ai", "data-science", "github", "ranjan-vishwakarma"],
+  "author": "Ranjan Vishwakarma",
+  "license": "MIT"
+}
