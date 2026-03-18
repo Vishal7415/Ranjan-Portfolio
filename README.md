@@ -15,9 +15,19 @@ A modern, animated portfolio website for Ranjan Vishwakarma, featuring a profess
 - **Hero** - Introduction with animated entrance
 - **About** - Education and background information
 - **Skills** - Technical skills with animated progress bars
-- **Projects** - Featured portfolio projects
+- **Projects** - Real projects from GitHub including Library System, Portfolio, Gen AI, Food, Atomization Energy Predictor, and Placement Prediction
 - **GitHub** - Real-time GitHub repositories and statistics
 - **Contact** - Contact form and social links
+
+## Real Projects Included
+
+The portfolio showcases actual projects from the GitHub account:
+- **Library System** - Python-based library management system
+- **Portfolio** - Personal portfolio website (CSS/HTML/JavaScript)
+- **Gen AI** - Artificial Intelligence and machine learning projects
+- **Food** - Food-related web application
+- **Atomization Energy Predictor** - ML project for energy prediction
+- **Placement Prediction** - ML model for student placement outcomes
 
 ## GitHub Integration
 
